@@ -1,0 +1,94 @@
+@import "tailwindcss";
+
+/* :root {
+  --brand-dark: #1f2937;
+  --brand-orange: #f38b00;
+  --brand-orange-hover: #e67f00;
+} */
+
+body {
+  margin: 0;
+  font-family: Inter, system-ui, sans-serif;
+}
+
+:root {
+  font-family:
+    Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+
+  color: #1e293b;
+  background: #fff7ed;
+
+  --sire-blue: #244d87;
+  --sire-blue-dark: #16345f;
+  --sire-orange: #f47735;
+  --sire-orange-dark: #d95f21;
+  --sire-cream: #fff7ed;
+  --sire-ink: #1e293b;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  margin: 0;
+  background: var(--sire-cream);
+  color: var(--sire-ink);
+}
+
+button,
+a,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+img {
+  max-width: 100%;
+}
+
+::selection {
+  background: rgba(36, 77, 135, 0.3);
+}
+
+/* Swiper pagination */
+
+.sirelab-hero .swiper-pagination {
+  bottom: 1.5rem !important;
+}
+
+.sirelab-hero .swiper-pagination-bullet {
+  width: 0.7rem;
+  height: 0.7rem;
+  background: white;
+  opacity: 0.6;
+}
+
+.sirelab-hero .swiper-pagination-bullet-active {
+  width: 2rem;
+  border-radius: 999px;
+  background: var(--sire-orange);
+  opacity: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}
