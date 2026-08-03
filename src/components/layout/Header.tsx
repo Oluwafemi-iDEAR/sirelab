@@ -9,6 +9,7 @@ const navigation = [
   { label: "Conferences & Workshops", to: "/conferences-workshops" },
   { label: "Publications", to: "/publications" },
   { label: "Courses", to: "/courses" },
+  { label: "Hall of Fame", to: "/hall-of-fame" },
   { label: "Contact", to: "/contact" },
 ];
 
@@ -47,7 +48,7 @@ export default function Header() {
           </Link>
 
           <nav className="hidden md:block" aria-label="Primary navigation">
-            <ul className="flex items-center gap-5 text-sm font-semibold text-slate-700 lg:gap-7">
+            <ul className="flex items-center gap-4 text-sm font-semibold whitespace-nowrap text-slate-700 lg:gap-6">
               {navigation.map((item) => (
                 <li key={item.to}>
                   <NavLink

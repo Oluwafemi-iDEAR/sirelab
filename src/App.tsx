@@ -8,6 +8,7 @@ const About = lazy(() => import("./pages/About/About"));
 const Publications = lazy(() => import("./pages/Publications/Publications"));
 const Conferences = lazy(() => import("./pages/Conferences/Conferences"));
 const Courses = lazy(() => import("./pages/Courses/Courses"));
+const HallOfFame = lazy(() => import("./pages/HallOfFame/HallOfFame"));
 const Contact = lazy(() => import("./pages/Contact/Contact"));
 
 function PageFallback() {
@@ -28,6 +29,7 @@ export default function App() {
           <Route path="/conferences-workshops" element={<Conferences />} />
           <Route path="/publications" element={<Publications />} />
           <Route path="/courses" element={<Courses />} />
+          <Route path="/hall-of-fame" element={<HallOfFame />} />
           <Route path="/contact" element={<Contact />} />
 
           <Route path="*" element={<Navigate to="/" replace />} />

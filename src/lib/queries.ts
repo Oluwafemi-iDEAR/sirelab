@@ -140,6 +140,19 @@ export const COURSES_QUERY = `*[_type == "course"] | order(orderRank asc){
   link
 }`;
 
+export const HALL_OF_FAME_QUERY = `*[_type == "outstandingStudent"] | order(orderRank asc){
+  "id": _id,
+  name,
+  "image": image.asset->url,
+  award,
+  year,
+  program,
+  achievement,
+  quote,
+  linkedin,
+  featured
+}`;
+
 export const ABOUT_PAGE_QUERY = `*[_type == "aboutPage"][0]{
   hero,
   about,

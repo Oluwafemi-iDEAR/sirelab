@@ -22,6 +22,18 @@ const SECONDARY_CTA: CtaLink = {
 
 export const heroSlides: HeroSlide[] = [
   {
+    id: "hero-hall-of-fame",
+    eyebrow: "Student Excellence",
+    title: "Celebrating Our Outstanding Students",
+    description:
+      "From award-winning research to community impact, meet the SIRE students whose achievements are shaping the future of sustainable infrastructure and STEM.",
+    image:
+      "https://images.unsplash.com/photo-1627556704302-624286467c65?q=80&w=1600&auto=format&fit=crop",
+    imagePosition: "center",
+    ctaPrimary: { label: "Visit the Hall of Fame", href: "/hall-of-fame" },
+    ctaSecondary: { label: "Explore research", href: "#research-focus" },
+  },
+  {
     id: "hero-noise-2025",
     eyebrow: "SIRELAB Conference Engagement",
     title: "2025 Noise Conference (Vermont)",

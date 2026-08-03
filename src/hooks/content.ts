@@ -6,6 +6,8 @@ import { events } from "../data/events";
 import type { SireEvent } from "../data/events";
 import { faqs } from "../data/faqs";
 import type { Faq } from "../data/faqs";
+import { hallOfFame } from "../data/hallOfFame";
+import type { OutstandingStudent } from "../data/hallOfFame";
 import { heroSlides } from "../data/heroSlides";
 import type { HeroSlide } from "../data/heroSlides";
 import { homeStats } from "../data/homeStats";
@@ -30,6 +32,7 @@ import {
   EVENTS_QUERY,
   FAQS_QUERY,
   FEATURED_PUBLICATIONS_QUERY,
+  HALL_OF_FAME_QUERY,
   HERO_SLIDES_QUERY,
   HOME_STATS_QUERY,
   MILESTONES_QUERY,
@@ -98,3 +101,10 @@ export const useCourses = () =>
 
 export const useAboutContent = () =>
   useSanityData<AboutContent>("aboutPage", ABOUT_PAGE_QUERY, aboutContent);
+
+export const useHallOfFame = () =>
+  useSanityData<OutstandingStudent[]>(
+    "hallOfFame",
+    HALL_OF_FAME_QUERY,
+    hallOfFame,
+  );
