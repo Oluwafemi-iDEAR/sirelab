@@ -33,7 +33,7 @@ export const siteSettings: SiteSettings = {
   address: "1700 East Cold Spring Lane, Baltimore, MD 21251",
   phone: "(443) 885-5445",
   officeHours: "Mon–Fri, 9am–5pm ET",
-  primaryEmail: "info@morgan.edu",
+  primaryEmail: "srielab354@gmail.com",
   socials: {
     twitter: "#",
     linkedin: "#",

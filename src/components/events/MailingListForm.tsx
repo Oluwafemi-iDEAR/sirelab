@@ -1,8 +1,7 @@
 import { useForm } from "react-hook-form";
 import toast from "react-hot-toast";
 
-import { useSiteSettings } from "../../hooks/content";
-import { submitToWeb3Forms } from "../../lib/web3forms";
+import { submitForm } from "../../lib/api";
 
 type MailingListValues = {
   email: string;
@@ -10,7 +9,6 @@ type MailingListValues = {
 };
 
 export default function MailingListForm() {
-  const { data: settings } = useSiteSettings();
   const {
     register,
     handleSubmit,
@@ -21,11 +19,10 @@ export default function MailingListForm() {
   const onSubmit = async (values: MailingListValues) => {
     if (values.botcheck) return; // honeypot
     try {
-      await submitToWeb3Forms({
-        access_key: settings.web3formsAccessKey,
-        subject: "New SIRE mailing-list signup",
-        from_name: "SIRE Website",
+      await submitForm({
+        type: "subscribe",
         email: values.email,
+        botcheck: values.botcheck,
       });
       toast.success("Thanks! You're on the list.");
       reset();

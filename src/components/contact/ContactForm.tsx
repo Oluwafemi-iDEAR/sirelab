@@ -3,8 +3,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import toast from "react-hot-toast";
 
-import { useSiteSettings } from "../../hooks/content";
-import { submitToWeb3Forms } from "../../lib/web3forms";
+import { submitForm } from "../../lib/api";
 
 const schema = z.object({
   name: z.string().min(2, "Please enter your name"),
@@ -20,7 +19,6 @@ const inputClass =
   "w-full rounded-xl border border-orange-200 px-4 py-3 text-slate-700 focus:outline-none focus:ring-2 focus:ring-orange-400";
 
 export default function ContactForm() {
-  const { data: settings } = useSiteSettings();
   const {
     register,
     handleSubmit,
@@ -31,13 +29,13 @@ export default function ContactForm() {
   const onSubmit = async (values: ContactValues) => {
     if (values.botcheck) return; // honeypot
     try {
-      await submitToWeb3Forms({
-        access_key: settings.web3formsAccessKey,
-        subject: values.subject || "New SIRE contact message",
-        from_name: values.name,
+      await submitForm({
+        type: "contact",
         name: values.name,
         email: values.email,
+        subject: values.subject,
         message: values.message,
+        botcheck: values.botcheck,
       });
       toast.success("Thanks! Your message has been sent.");
       reset();

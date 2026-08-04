@@ -163,7 +163,7 @@ export default function Publications() {
       <CtaBanner
         heading="Add a new publication"
         text="Faculty and students can submit new work to be listed here."
-        buttons={[{ label: "Email us", href: "mailto:info@morgan.edu" }]}
+        buttons={[{ label: "Email us", href: "mailto:srielab354@gmail.com" }]}
       />
     </>
   );
