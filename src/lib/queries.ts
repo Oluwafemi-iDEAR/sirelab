@@ -158,5 +158,11 @@ export const ABOUT_PAGE_QUERY = `*[_type == "aboutPage"][0]{
   about,
   mission,
   vision,
-  whatWeDo
+  whatWeDo,
+  "showcase": {
+    "heading": showcase.heading,
+    "intro": showcase.intro,
+    "downloadLabel": showcase.downloadLabel,
+    "pdfUrl": showcase.pdf.asset->url
+  }
 }`;

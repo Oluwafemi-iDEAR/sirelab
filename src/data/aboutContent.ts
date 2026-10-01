@@ -16,6 +16,14 @@ export type AboutContent = {
   mission: { heading: string; text: string; bullets: string[] };
   vision: { heading: string; text: string; stats: AboutStat[] };
   whatWeDo: { heading: string; cards: WhatWeDoCard[] };
+  showcase: {
+    heading: string;
+    intro?: string;
+    // URL to a PDF deck. Static fallback points at a file in /public; Sanity
+    // resolves this from an uploaded file asset (see ABOUT_PAGE_QUERY).
+    pdfUrl?: string;
+    downloadLabel?: string;
+  };
 };
 
 export const aboutContent: AboutContent = {
@@ -96,5 +104,12 @@ export const aboutContent: AboutContent = {
           "Prototyping shop, sensing lab, field kits, and a compute cluster for data-intensive work.",
       },
     ],
+  },
+  showcase: {
+    heading: "The Story Continues",
+    intro:
+      "Research. Mentorship. Exposure. Impact. A look at SIRE milestones, student achievements, and award-winning work.",
+    pdfUrl: "/slides/sire-showcase.pdf",
+    downloadLabel: "Download full deck (PDF)",
   },
 };

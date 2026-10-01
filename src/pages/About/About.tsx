@@ -4,6 +4,7 @@ import CtaBanner from "../../components/common/CtaBanner";
 import PeopleGrid from "../../components/about/PeopleGrid";
 import Timeline from "../../components/about/Timeline";
 import FaqAccordion from "../../components/about/FaqAccordion";
+import DeckShowcase from "../../components/about/DeckShowcase";
 import { useAboutContent } from "../../hooks/content";
 
 export default function About() {
@@ -127,6 +128,13 @@ export default function About() {
           </div>
         </div>
       </section>
+
+      <DeckShowcase
+        heading={content.showcase.heading}
+        intro={content.showcase.intro}
+        pdfUrl={content.showcase.pdfUrl}
+        downloadLabel={content.showcase.downloadLabel}
+      />
 
       <PeopleGrid />
       <Timeline />
